@@ -17,6 +17,7 @@ class _AuthScreenState extends State<AuthScreen> {
       body: StreamBuilder<User?>(
           stream: FirebaseAuth.instance.authStateChanges(),
           builder: (context, snapshot) {
+
             print(
                 "Auth state snapshot: ${snapshot.connectionState}, ${snapshot.hasData}");
 
