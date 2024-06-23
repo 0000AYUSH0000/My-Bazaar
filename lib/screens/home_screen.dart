@@ -3,7 +3,6 @@ import 'package:flutter/material.dart';
 import 'package:login_signup/screens/favourite_screen.dart';
 import 'package:login_signup/screens/profile_screen.dart';
 import 'package:login_signup/screens/starting_screen.dart';
-
 import 'cart_details.dart';
 
 class HomeScreen extends StatefulWidget {
@@ -34,13 +33,7 @@ class _HomeScreenState extends State<HomeScreen> {
   @override
   Widget build(BuildContext context) {
 
-    int _selectedIndex = 0;
-
-    void _onItemTapped(int index) {
-      setState(() {
-        _selectedIndex = index;
-      });
-    }
+    
     return Scaffold(
       appBar: PreferredSize(
         preferredSize: Size.fromHeight(60.0), // custom height
