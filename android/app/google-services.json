@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "323736325571",
+    "project_id": "myfirstfirebase-fccd1",
+    "storage_bucket": "myfirstfirebase-fccd1.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:323736325571:android:436dcc3787069b0289c176",
+        "android_client_info": {
+          "package_name": "com.example.login_signup"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyADTo7n_2nAw2Z3cMQuMvlmTuLqn5auGdY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
