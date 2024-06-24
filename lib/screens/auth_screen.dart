@@ -29,7 +29,7 @@ class _AuthScreenState extends State<AuthScreen> {
 
             if (snapshot.hasData) {
               print("User is logged in");
-              return HomeScreen();
+              return HomeScreen(index: 0,);
             } else {
               print("User is not logged in");
               return WelcomeScreen();

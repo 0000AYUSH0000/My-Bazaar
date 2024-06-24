@@ -1,12 +1,13 @@
-import 'package:firebase_auth/firebase_auth.dart';
+
 import 'package:flutter/material.dart';
 import 'package:login_signup/screens/favourite_screen.dart';
-import 'package:login_signup/screens/profile_screen.dart';
 import 'package:login_signup/screens/starting_screen.dart';
 import 'cart_details.dart';
-
+import 'package:login_signup/widgets/nav_bar.dart';
 class HomeScreen extends StatefulWidget {
-  const HomeScreen({super.key});
+   HomeScreen({super.key, required this.index,});
+   int index=-1;
+
 
   @override
   State<HomeScreen> createState() => _HomeScreenState();
@@ -16,28 +17,33 @@ class _HomeScreenState extends State<HomeScreen> {
   List screen=[
     StartingScreen(),
     FavouriteScreen(),
-    ProfileScreen()
+    CartDetails(),
   ];
-  int currentIndex=0;
 
 
-  void signOut() {
-    try {
-      FirebaseAuth.instance.signOut();
-      Navigator.pushReplacementNamed(context, '/welcome');
-    } on FirebaseAuthException catch (e) {
-      print("Error signing in: $e");
-    }
-  }
+
+
 
   @override
   Widget build(BuildContext context) {
 
 
     return Scaffold(
+    drawer: NavBar(),
       appBar: PreferredSize(
+
         preferredSize: Size.fromHeight(60.0), // custom height
         child: AppBar(
+          leading: Builder(
+            builder: (context) {
+              return IconButton(
+                icon: Icon(Icons.menu,color: Colors.white,),
+                onPressed: () {
+                  Scaffold.of(context).openDrawer();
+                },
+              );
+            },
+          ),
           flexibleSpace: Container(
             decoration: BoxDecoration(
               gradient: LinearGradient(
@@ -53,16 +59,12 @@ class _HomeScreenState extends State<HomeScreen> {
             'My Bazaar',
             style: TextStyle(color: Colors.white),
           ),
-          centerTitle: true,
-          actions: [
-            IconButton(onPressed: signOut, icon: Icon(Icons.logout_outlined,color: Colors.white,)),
-            IconButton(onPressed:()=> Navigator.push(context,MaterialPageRoute(builder: (context)=>CartDetails())), icon: Icon(Icons.shopping_cart,color: Colors.white,))
-            
-          ],
+          centerTitle: false,
           automaticallyImplyLeading: false,
+
         ),
       ),
-      body: screen[currentIndex],
+      body: screen[widget.index],
       bottomNavigationBar: Container(
         decoration: BoxDecoration(
           gradient: LinearGradient(
@@ -82,16 +84,16 @@ class _HomeScreenState extends State<HomeScreen> {
               label: 'Favourites',
             ),
             BottomNavigationBarItem(
-              icon: Icon(Icons.person),
-              label: 'Profile',
+              icon: Icon(Icons.shopping_cart),
+              label: 'Cart',
             ),
           ],
-          currentIndex: currentIndex,
+          currentIndex: widget.index,
           selectedItemColor: Colors.orangeAccent,
           unselectedItemColor: Colors.white,
           onTap: (value){
             setState(() {
-              currentIndex=value;
+              widget.index=value;
             });
           },
           backgroundColor: Colors.transparent, // Make background transparent to see the gradient

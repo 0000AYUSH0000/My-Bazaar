@@ -1,6 +1,7 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:login_signup/screens/home_screen.dart';
 
 class RegScreen extends StatefulWidget {
   const RegScreen({super.key});
@@ -51,6 +52,7 @@ class _RegScreenState extends State<RegScreen> {
           email: emailController.text,
           password: passwordController.text,
         );
+
         print("Signed in as ${userCredential.user?.email}");
       }
       else{
@@ -58,7 +60,7 @@ class _RegScreenState extends State<RegScreen> {
       }
       // Navigate to homescreen on successful signup
       Navigator.pop(context);
-      Navigator.pushReplacementNamed(context, '/home');
+      Navigator.pushReplacement(context, MaterialPageRoute(builder: (context)=>HomeScreen(index: 0)));
     } on FirebaseAuthException catch (e) {
       Navigator.pop(context);
      _showErrorDialog('Error', e.code);

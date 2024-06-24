@@ -1,13 +1,26 @@
 import 'package:flutter/material.dart';
 import 'package:login_signup/models/product.dart';
+import 'package:login_signup/providers/cart_provider.dart';
+import 'package:login_signup/screens/cart_details.dart';
+import 'package:login_signup/screens/home_screen.dart';
 import 'package:login_signup/widgets/available_size.dart';
 
-class DetailsScreen extends StatelessWidget {
+
+class DetailsScreen extends StatefulWidget {
   const DetailsScreen({super.key, required this.product});
   final Product product;
 
   @override
+  State<DetailsScreen> createState() => _DetailsScreenState();
+}
+
+class _DetailsScreenState extends State<DetailsScreen> {
+  @override
   Widget build(BuildContext context) {
+
+    final provider = CartProvider.of(context);
+
+
 
     return Scaffold(
       appBar: PreferredSize(
@@ -49,7 +62,7 @@ class DetailsScreen extends StatelessWidget {
                     color: Colors.grey.withOpacity(0.2),
                   ),
                   child: Image.asset(
-                    product.image,
+                    widget.product.image,
                     scale: 3.3,
                   ),
                 ),
@@ -63,7 +76,7 @@ class DetailsScreen extends StatelessWidget {
               child: Column(
                 children: [
                   Text(
-                    product.name,
+                    widget.product.name,
                     textAlign: TextAlign.center,
                     style: TextStyle(fontSize: 17, fontWeight: FontWeight.bold),
                   ),
@@ -71,14 +84,14 @@ class DetailsScreen extends StatelessWidget {
                     height: 10,
                   ),
                   Text(
-                    "₹ ${product.price}",
+                    "₹ ${widget.product.price}",
                     style: TextStyle(fontSize: 22, fontWeight: FontWeight.bold),
                   ),
                   SizedBox(
                     height: 36,
                   ),
                   Text(
-                    product.description,
+                    widget.product.description,
                     textAlign: TextAlign.justify,
                     style: TextStyle(fontSize: 16),
                   ),
@@ -100,7 +113,8 @@ class DetailsScreen extends StatelessWidget {
                   ),
                   Row(
                     children: [
-                      if (product.id >= 1 && product.id <= 25) ...[
+                      if (widget.product.id >= 1 &&
+                          widget.product.id <= 25) ...[
                         AvailableSize(
                           size: "US 6",
                         ),
@@ -117,7 +131,8 @@ class DetailsScreen extends StatelessWidget {
                           size: "US 10",
                         ),
                       ],
-                      if (product.id >= 26 && product.id <= 50) ...[
+                      if (widget.product.id >= 26 &&
+                          widget.product.id <= 50) ...[
                         AvailableSize(
                           size: "S",
                         ),
@@ -134,7 +149,8 @@ class DetailsScreen extends StatelessWidget {
                           size: "XXL",
                         ),
                       ],
-                      if (product.id >= 51 && product.id <= 75) ...[
+                      if (widget.product.id >= 51 &&
+                          widget.product.id <= 75) ...[
                         AvailableSize(
                           size: "128GB",
                         ),
@@ -151,7 +167,8 @@ class DetailsScreen extends StatelessWidget {
                           size: "2TB",
                         ),
                       ],
-                      if (product.id >= 76 && product.id <= 100) ...[
+                      if (widget.product.id >= 76 &&
+                          widget.product.id <= 100) ...[
                         AvailableSize(
                           size: "128GB",
                         ),
@@ -162,7 +179,8 @@ class DetailsScreen extends StatelessWidget {
                           size: "512GB",
                         ),
                       ],
-                      if (product.id >= 101 && product.id <= 125) ...[
+                      if (widget.product.id >= 101 &&
+                          widget.product.id <= 125) ...[
                         AvailableSize(
                           size: "S",
                         ),
@@ -221,38 +239,49 @@ class DetailsScreen extends StatelessWidget {
               ),
             ),
             SizedBox(
-              height:35 ,
+              height: 35,
             ),
             Container(
               padding: EdgeInsets.all(20),
               width: double.infinity,
               height: MediaQuery.of(context).size.height / 10,
               decoration: BoxDecoration(
-                gradient: LinearGradient(
-                  colors: [
-                    Color(0xffB81736),
-                    Color(0xff281537),
-                  ],
-                ),
-                borderRadius: BorderRadius.circular(20)
-              ),
+                  gradient: LinearGradient(
+                    colors: [
+                      Color(0xffB81736),
+                      Color(0xff281537),
+                    ],
+                  ),
+                  borderRadius: BorderRadius.circular(20)),
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   Text(
-                    "₹ ${product.price}",style: TextStyle(fontSize: 36,color: Colors.white,fontWeight: FontWeight.bold),
+                    "₹ ${widget.product.price}",
+                    style: TextStyle(
+                        fontSize: 36,
+                        color: Colors.white,
+                        fontWeight: FontWeight.bold),
                   ),
-
-                  ElevatedButton.icon(onPressed:(){}, label: Text("Add to Cart"),
-                  icon: Icon(Icons.add_shopping_cart),)
+                  ElevatedButton.icon(
+                    onPressed: () {
+                      provider.toggleProduct(widget.product);
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => HomeScreen(index: 2),
+                        ),
+                      );
+                    },
+                    label: Text("Add to Cart"),
+                    icon: Icon(Icons.add_shopping_cart),
+                  )
                 ],
               ),
             ),
           ],
         ),
       ),
-
-
     );
   }
 }

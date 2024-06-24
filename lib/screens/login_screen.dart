@@ -2,6 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/widgets.dart';
+import 'package:login_signup/screens/home_screen.dart';
 
 class LoginScreen extends StatefulWidget {
   const LoginScreen({super.key});
@@ -53,7 +54,7 @@ class _LoginScreenState extends State<LoginScreen> {
 
       // Navigate to WelcomeScreen on successful login
       Navigator.pop(context);
-      Navigator.pushReplacementNamed(context, '/home');
+      Navigator.pushReplacement(context, MaterialPageRoute(builder: (context)=>HomeScreen(index: 0)));
     } on FirebaseAuthException catch (e) {
       Navigator.pop(context);
       if (e.code == 'user-not-found') {
