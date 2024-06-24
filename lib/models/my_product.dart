@@ -1199,7 +1199,7 @@ class MyProducts{
     ),
     Product(
       id: 123,
-      name: 'Tommy Jeans Men\'s TJM Essential Flag T-Shirt',
+      name: 'Tommy Jeans Men\'s T-Shirt',
       category: 'T-Shirt',
       image: 'assets/tshirts/3.png',
       description:
@@ -2369,7 +2369,7 @@ class MyProducts{
     ),
     Product(
       id: 116,
-      name: 'Lacoste Men\'s Crew Neck Pima Cotton Jersey T-Shirt',
+      name: 'Lacoste Men\'s Cotton Jersey T-Shirt',
       category: 'T-Shirt',
       image: 'assets/tshirts/1.png',
       description:
@@ -2439,7 +2439,7 @@ class MyProducts{
     ),
     Product(
       id: 123,
-      name: 'Tommy Jeans Men\'s TJM Essential Flag T-Shirt',
+      name: 'Tommy Jeans Men\'s T-Shirt',
       category: 'T-Shirt',
       image: 'assets/tshirts/3.png',
       description:

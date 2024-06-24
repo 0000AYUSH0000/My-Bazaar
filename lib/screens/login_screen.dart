@@ -2,6 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/widgets.dart';
+import 'package:login_signup/screens/forgot_password.dart';
 import 'package:login_signup/screens/home_screen.dart';
 
 class LoginScreen extends StatefulWidget {
@@ -160,14 +161,19 @@ class _LoginScreenState extends State<LoginScreen> {
                     const SizedBox(
                       height: 15,
                     ),
-                    const Align(
+                     Align(
                       alignment: Alignment.centerRight,
-                      child: Text(
-                        'Forgot Password?',
-                        style: TextStyle(
-                            fontWeight: FontWeight.bold,
-                            color: Color(0xffB81736),
-                            fontSize: 15),
+                      child: GestureDetector(
+                        onTap: (){
+                          Navigator.push(context, MaterialPageRoute(builder: (context)=>ForgotPassword()));
+                        },
+                        child: Text(
+                          'Forgot Password?',
+                          style: TextStyle(
+                              fontWeight: FontWeight.bold,
+                              color: Color(0xffB81736),
+                              fontSize: 15),
+                        ),
                       ),
                     ),
                     const SizedBox(

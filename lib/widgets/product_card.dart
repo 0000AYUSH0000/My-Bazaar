@@ -38,11 +38,11 @@ class _ProductCardState extends State<ProductCard> {
             ],
           ),
           SizedBox(
-            height: 70,
-            width: 70,
+            height: 55,
+            width: 55,
             child: Image.asset(widget.product.image,fit: BoxFit.cover,),
           ),
-          Text(widget.product.name,textAlign: TextAlign.center,style: TextStyle(color: Colors.black87,fontWeight: FontWeight.bold,fontSize: 14,),),
+          Text(widget.product.name,textAlign: TextAlign.center,style: TextStyle(color: Colors.black87,fontWeight: FontWeight.bold,fontSize: 13,),),
           Text(widget.product.category,style: TextStyle(color: Color(0xffB81736),fontSize: 13),),
           Text("₹ ${widget.product.price}",style: TextStyle(color: Colors.black87,fontWeight: FontWeight.bold,fontSize: 16)),
           
