@@ -1,4 +1,3 @@
-
 import 'package:flutter/material.dart';
 import 'package:login_signup/screens/favourite_screen.dart';
 import 'package:login_signup/screens/starting_screen.dart';

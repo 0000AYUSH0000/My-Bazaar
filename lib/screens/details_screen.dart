@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:login_signup/models/product.dart';
 import 'package:login_signup/providers/cart_provider.dart';
-import 'package:login_signup/screens/cart_details.dart';
 import 'package:login_signup/screens/home_screen.dart';
 import 'package:login_signup/widgets/available_size.dart';
 
@@ -55,8 +54,8 @@ class _DetailsScreenState extends State<DetailsScreen> {
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 Container(
-                  width: 220,
-                  height: 220,
+                  width: 160,
+                  height: 160,
                   decoration: BoxDecoration(
                     shape: BoxShape.circle,
                     color: Colors.grey.withOpacity(0.2),
@@ -69,7 +68,7 @@ class _DetailsScreenState extends State<DetailsScreen> {
               ],
             ),
             SizedBox(
-              height: 20,
+              height: 14,
             ),
             Container(
               decoration: BoxDecoration(),
@@ -88,7 +87,7 @@ class _DetailsScreenState extends State<DetailsScreen> {
                     style: TextStyle(fontSize: 22, fontWeight: FontWeight.bold),
                   ),
                   SizedBox(
-                    height: 36,
+                    height: 20,
                   ),
                   Text(
                     widget.product.description,
@@ -127,15 +126,11 @@ class _DetailsScreenState extends State<DetailsScreen> {
                         AvailableSize(
                           size: "US 9",
                         ),
-                        AvailableSize(
-                          size: "US 10",
-                        ),
+
                       ],
                       if (widget.product.id >= 26 &&
                           widget.product.id <= 50) ...[
-                        AvailableSize(
-                          size: "S",
-                        ),
+
                         AvailableSize(
                           size: "M",
                         ),
@@ -163,9 +158,7 @@ class _DetailsScreenState extends State<DetailsScreen> {
                         AvailableSize(
                           size: "1TB",
                         ),
-                        AvailableSize(
-                          size: "2TB",
-                        ),
+
                       ],
                       if (widget.product.id >= 76 &&
                           widget.product.id <= 100) ...[
@@ -181,9 +174,7 @@ class _DetailsScreenState extends State<DetailsScreen> {
                       ],
                       if (widget.product.id >= 101 &&
                           widget.product.id <= 125) ...[
-                        AvailableSize(
-                          size: "S",
-                        ),
+
                         AvailableSize(
                           size: "M",
                         ),
@@ -259,7 +250,7 @@ class _DetailsScreenState extends State<DetailsScreen> {
                   Text(
                     "₹ ${widget.product.price}",
                     style: TextStyle(
-                        fontSize: 36,
+                        fontSize: 26,
                         color: Colors.white,
                         fontWeight: FontWeight.bold),
                   ),

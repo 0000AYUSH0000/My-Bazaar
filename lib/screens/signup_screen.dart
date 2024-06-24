@@ -49,8 +49,8 @@ class _RegScreenState extends State<RegScreen> {
     try {
       if(passwordController.text == confirmPasswordController.text){
         UserCredential userCredential = await FirebaseAuth.instance.createUserWithEmailAndPassword(
-          email: emailController.text,
-          password: passwordController.text,
+          email: emailController.text.trim(),
+          password: passwordController.text.trim(),
         );
 
         print("Signed in as ${userCredential.user?.email}");

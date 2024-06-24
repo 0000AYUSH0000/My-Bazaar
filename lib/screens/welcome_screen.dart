@@ -17,24 +17,20 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
         height: double.infinity,
         width: double.infinity,
         decoration: const BoxDecoration(
-          gradient: LinearGradient(
-            colors: [
-              Color(0xffB81736),
-              Color(0xff281537),
-            ],
-          ),
+          color: Colors.white
+
         ),
         child: Column(children: [
            Padding(
             padding: EdgeInsets.only(top: 200.0),
-            child:  Image.asset('assets/shopping.png',scale: 3.5,),
+            child:  Image.asset('assets/cart.gif',scale: 4.5,),
           ),
           const SizedBox(
-            height: 70,
+            height: 50,
           ),
           const Text(
             'MY BAZAAR',
-            style: TextStyle(fontSize: 30, color: Colors.white),
+            style: TextStyle(fontSize: 30, color: Colors.black87,fontWeight: FontWeight.bold),
           ),
           const SizedBox(
             height: 30,
@@ -48,6 +44,12 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
               height: 53,
               width: 320,
               decoration: BoxDecoration(
+                gradient: LinearGradient(
+                  colors: [
+                    Color(0xffB81736),
+                    Color(0xff281537),
+                  ],
+                ),
                 borderRadius: BorderRadius.circular(30),
                 border: Border.all(color: Colors.white),
               ),
@@ -74,7 +76,12 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
               height: 53,
               width: 320,
               decoration: BoxDecoration(
-                color: Colors.white,
+                gradient: LinearGradient(
+                  colors: [
+                    Color(0xffB81736),
+                    Color(0xff281537),
+                  ],
+                ),
                 borderRadius: BorderRadius.circular(30),
                 border: Border.all(color: Colors.white),
               ),
@@ -84,7 +91,7 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
                   style: TextStyle(
                       fontSize: 20,
                       fontWeight: FontWeight.bold,
-                      color: Colors.black),
+                      color: Colors.white),
                 ),
               ),
             ),
@@ -92,7 +99,7 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
           const Spacer(),
           const Text(
             'Shop away the boredom',
-            style: TextStyle(fontSize: 17, color: Colors.white),
+            style: TextStyle(fontSize: 17, color:Color(0xffB81736),fontWeight: FontWeight.bold ),
           ), //
           const SizedBox(
             height: 12,

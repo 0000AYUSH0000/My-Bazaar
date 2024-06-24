@@ -38,8 +38,8 @@ class _ProductCardState extends State<ProductCard> {
             ],
           ),
           SizedBox(
-            height: 105,
-            width: 105,
+            height: 70,
+            width: 70,
             child: Image.asset(widget.product.image,fit: BoxFit.cover,),
           ),
           Text(widget.product.name,textAlign: TextAlign.center,style: TextStyle(color: Colors.black87,fontWeight: FontWeight.bold,fontSize: 14,),),
