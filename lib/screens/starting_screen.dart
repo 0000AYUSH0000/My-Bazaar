@@ -5,7 +5,7 @@ import 'package:login_signup/screens/details_screen.dart';
 import '../widgets/product_card.dart';
 
 class StartingScreen extends StatefulWidget {
-  StartingScreen({super.key});
+  const StartingScreen({super.key});
 
   @override
   State<StartingScreen> createState() => _StartingScreenState();
@@ -17,7 +17,7 @@ class _StartingScreenState extends State<StartingScreen> {
 
   _buildTShirts(){
     return GridView.builder(
-      gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+      gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
           crossAxisCount: 2,
           childAspectRatio: (100 / 140),
           crossAxisSpacing: 12,
@@ -36,7 +36,7 @@ class _StartingScreenState extends State<StartingScreen> {
 
   _buildPhones(){
     return GridView.builder(
-      gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+      gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
           crossAxisCount: 2,
           childAspectRatio: (100 / 140),
           crossAxisSpacing: 12,
@@ -55,7 +55,7 @@ class _StartingScreenState extends State<StartingScreen> {
 
   _buildLaptops(){
     return GridView.builder(
-      gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+      gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
           crossAxisCount: 2,
           childAspectRatio: (100 / 140),
           crossAxisSpacing: 12,
@@ -74,7 +74,7 @@ class _StartingScreenState extends State<StartingScreen> {
 
   _buildSneakers(){
     return GridView.builder(
-      gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+      gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
           crossAxisCount: 2,
           childAspectRatio: (100 / 140),
           crossAxisSpacing: 12,
@@ -93,7 +93,7 @@ class _StartingScreenState extends State<StartingScreen> {
 
   _buildJackets(){
     return GridView.builder(
-      gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+      gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
           crossAxisCount: 2,
           childAspectRatio: (100 / 140),
           crossAxisSpacing: 12,
@@ -112,7 +112,7 @@ class _StartingScreenState extends State<StartingScreen> {
 
   _buildAllProducts() {
     return GridView.builder(
-      gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+      gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
           crossAxisCount: 2,
           childAspectRatio: (100 / 140),
           crossAxisSpacing: 12,
@@ -137,11 +137,11 @@ class _StartingScreenState extends State<StartingScreen> {
       child: Container(
         width: 100,
         height: 40,
-        margin: EdgeInsets.only(top: 10, right: 10),
+        margin: const EdgeInsets.only(top: 10, right: 10),
         alignment: Alignment.center,
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(10),
-          gradient: LinearGradient(colors: [
+          gradient: const LinearGradient(colors: [
             Color(0xffB81736),
             Color(0xff281537),
           ]),
@@ -161,7 +161,7 @@ class _StartingScreenState extends State<StartingScreen> {
       padding: const EdgeInsets.all(20.0),
       child: Column(
         children: [
-          Text(
+          const Text(
             'Our Products!',
             style: TextStyle(fontSize: 25, fontWeight: FontWeight.bold),
           ),
@@ -179,7 +179,7 @@ class _StartingScreenState extends State<StartingScreen> {
               ],
             ),
           ),
-          SizedBox(
+          const SizedBox(
             height: 16,
           ),
           Expanded(child:

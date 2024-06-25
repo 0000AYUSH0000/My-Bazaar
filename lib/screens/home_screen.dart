@@ -5,7 +5,7 @@ import 'cart_details.dart';
 import 'package:login_signup/widgets/nav_bar.dart';
 class HomeScreen extends StatefulWidget {
    HomeScreen({super.key, required this.index,});
-   int index=-1;
+   late final int index;
 
 
   @override
@@ -15,8 +15,8 @@ class HomeScreen extends StatefulWidget {
 class _HomeScreenState extends State<HomeScreen> {
   List screen=[
     StartingScreen(),
-    FavouriteScreen(),
-    CartDetails(),
+    const FavouriteScreen(),
+    const CartDetails(),
   ];
 
 
@@ -31,12 +31,12 @@ class _HomeScreenState extends State<HomeScreen> {
     drawer: NavBar(),
       appBar: PreferredSize(
 
-        preferredSize: Size.fromHeight(60.0), // custom height
+        preferredSize: const Size.fromHeight(60.0), // custom height
         child: AppBar(
           leading: Builder(
             builder: (context) {
               return IconButton(
-                icon: Icon(Icons.menu,color: Colors.white,),
+                icon: const Icon(Icons.menu,color: Colors.white,),
                 onPressed: () {
                   Scaffold.of(context).openDrawer();
                 },
@@ -44,7 +44,7 @@ class _HomeScreenState extends State<HomeScreen> {
             },
           ),
           flexibleSpace: Container(
-            decoration: BoxDecoration(
+            decoration: const BoxDecoration(
               gradient: LinearGradient(
                 colors: [
                   Color(0xffB81736),
@@ -54,7 +54,7 @@ class _HomeScreenState extends State<HomeScreen> {
               ),
             ),
           ),
-          title: Text(
+          title: const Text(
             'My Bazaar',
             style: TextStyle(color: Colors.white),
           ),
@@ -65,7 +65,7 @@ class _HomeScreenState extends State<HomeScreen> {
       ),
       body: screen[widget.index],
       bottomNavigationBar: Container(
-        decoration: BoxDecoration(
+        decoration: const BoxDecoration(
           gradient: LinearGradient(
             colors: [ Color(0xffB81736),
               Color(0xff281537),],
@@ -97,7 +97,7 @@ class _HomeScreenState extends State<HomeScreen> {
           },
           backgroundColor: Colors.transparent, // Make background transparent to see the gradient
           type: BottomNavigationBarType.fixed,
-          selectedLabelStyle: TextStyle(fontWeight: FontWeight.bold),
+          selectedLabelStyle: const TextStyle(fontWeight: FontWeight.bold),
         ),
       ),
     );

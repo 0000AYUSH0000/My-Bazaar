@@ -18,7 +18,7 @@ class _CartDetailsState extends State<CartDetails> {
     final finalList = provider.cart;
 
 
-    _buildProductQuantity(IconData icon, int index) {
+    buildProductQuantity(IconData icon, int index) {
       return GestureDetector(
         onTap: () {
           setState(() {
@@ -31,7 +31,7 @@ class _CartDetailsState extends State<CartDetails> {
           });
         },
         child: Container(
-          decoration: BoxDecoration(
+          decoration: const BoxDecoration(
             shape: BoxShape.circle,
             color: Colors.white,
           ),
@@ -45,8 +45,8 @@ class _CartDetailsState extends State<CartDetails> {
 
     return  Column(
         children: [
-          Padding(
-            padding: const EdgeInsets.only(top: 20, left: 20),
+          const Padding(
+            padding: EdgeInsets.only(top: 20, left: 20),
             child: Row(
 
               children: [
@@ -62,10 +62,10 @@ class _CartDetailsState extends State<CartDetails> {
               itemCount: finalList.length,
               itemBuilder: (context, index) {
                 return Padding(
-                  padding: EdgeInsets.all(10),
+                  padding: const EdgeInsets.all(10),
                   child: Slidable(
                     endActionPane: ActionPane(
-                      motion: ScrollMotion(),
+                      motion: const ScrollMotion(),
                       children: [
                         SlidableAction(
                           onPressed: (context) {
@@ -85,7 +85,7 @@ class _CartDetailsState extends State<CartDetails> {
                       },
                       title: Text(
                         finalList[index].name,
-                        style: TextStyle(
+                        style: const TextStyle(
                             fontSize: 17, fontWeight: FontWeight.bold),
                       ),
                       subtitle: Text("₹ ${finalList[index].price}\n"),
@@ -98,13 +98,13 @@ class _CartDetailsState extends State<CartDetails> {
                       ),
                       trailing: Column(
                         children: [
-                          _buildProductQuantity(Icons.add, index),
+                          buildProductQuantity(Icons.add, index),
                           Text(
                             finalList[index].quantity.toString(),
-                            style: TextStyle(
+                            style: const TextStyle(
                                 fontWeight: FontWeight.bold, fontSize: 10),
                           ),
-                          _buildProductQuantity(Icons.remove, index),
+                          buildProductQuantity(Icons.remove, index),
                         ],
                       ),
                       tileColor: Colors.grey[100],
@@ -117,11 +117,11 @@ class _CartDetailsState extends State<CartDetails> {
           Padding(
             padding: const EdgeInsets.all(8.0),
             child: Container(
-              padding: EdgeInsets.all(20),
+              padding: const EdgeInsets.all(20),
               width: double.infinity,
               height: MediaQuery.of(context).size.height / 10,
               decoration: BoxDecoration(
-                  gradient: LinearGradient(
+                  gradient: const LinearGradient(
                     colors: [
                       Color(0xffB81736),
                       Color(0xff281537),
@@ -133,7 +133,7 @@ class _CartDetailsState extends State<CartDetails> {
                 children: [
                   Text(
                     "₹ ${provider.getTotalPrice()}",
-                    style: TextStyle(
+                    style: const TextStyle(
                         fontSize: 36,
                         color: Colors.white,
                         fontWeight: FontWeight.bold),
@@ -141,8 +141,8 @@ class _CartDetailsState extends State<CartDetails> {
                   ElevatedButton.icon(
                     onPressed: () {
                     },
-                    label: Text("Check-Out"),
-                    icon: Icon(Icons.local_shipping_outlined),
+                    label: const Text("Check-Out"),
+                    icon: const Icon(Icons.local_shipping_outlined),
                   )
                 ],
               ),

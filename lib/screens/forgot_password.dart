@@ -18,7 +18,7 @@ class _ForgotPasswordState extends State<ForgotPassword> {
             content: Text(message),
             actions: <Widget>[
               TextButton(
-                child: Text('OK'),
+                child: const Text('OK'),
                 onPressed: () {
                   Navigator.of(context).pop();
                 },
@@ -48,6 +48,7 @@ class _ForgotPasswordState extends State<ForgotPassword> {
     _emailController.dispose();
     super.dispose();
   }
+  @override
   Widget build(BuildContext context) {
 
 
@@ -94,13 +95,13 @@ class _ForgotPasswordState extends State<ForgotPassword> {
                   mainAxisAlignment: MainAxisAlignment.center,
 
                   children: [
-                    Text(textAlign: TextAlign.center,'Enter your Email below and we will send you a link to reset your password.',style: TextStyle(fontSize: 20,fontWeight: FontWeight.w400),),
-                    SizedBox(
+                    const Text(textAlign: TextAlign.center,'Enter your Email below and we will send you a link to reset your password.',style: TextStyle(fontSize: 20,fontWeight: FontWeight.w400),),
+                    const SizedBox(
                       height: 35,
                     ),
                     TextField(
                       controller: _emailController,
-                      decoration: InputDecoration(
+                      decoration: const InputDecoration(
                         suffixIcon: Icon(
                           Icons.check,
                           color: Colors.grey,

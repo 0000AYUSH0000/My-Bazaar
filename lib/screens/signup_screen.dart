@@ -1,5 +1,5 @@
 import 'package:firebase_auth/firebase_auth.dart';
-import 'package:flutter/cupertino.dart';
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:login_signup/screens/home_screen.dart';
 
@@ -27,7 +27,7 @@ class _RegScreenState extends State<RegScreen> {
           content: Text(message),
           actions: <Widget>[
             TextButton(
-              child: Text('OK'),
+              child: const Text('OK'),
               onPressed: () {
                 Navigator.of(context).pop();
               },
@@ -53,7 +53,9 @@ class _RegScreenState extends State<RegScreen> {
           password: passwordController.text.trim(),
         );
 
-        print("Signed in as ${userCredential.user?.email}");
+        if (kDebugMode) {
+          print("Signed in as ${userCredential.user?.email}");
+        }
       }
       else{
         _showErrorDialog('OOPs an error occurred', 'Make sure the password and confirm password are same');
@@ -112,7 +114,7 @@ class _RegScreenState extends State<RegScreen> {
                   children: [
                      TextField(
                        controller: nameController ,
-                      decoration: InputDecoration(
+                      decoration: const InputDecoration(
                           suffixIcon: Icon(
                             Icons.check,
                             color: Colors.grey,
@@ -130,7 +132,7 @@ class _RegScreenState extends State<RegScreen> {
                     ),
                      TextField(
                       controller: emailController,
-                      decoration: InputDecoration(
+                      decoration: const InputDecoration(
                         suffixIcon: Icon(
                           Icons.check,
                           color: Colors.grey,
@@ -240,7 +242,7 @@ class _RegScreenState extends State<RegScreen> {
                         mainAxisAlignment: MainAxisAlignment.center,
                         
                         children: [
-                          Text(
+                          const Text(
                             "Already have an account?",
                             style: TextStyle(
                                 fontWeight: FontWeight.bold,
@@ -250,7 +252,7 @@ class _RegScreenState extends State<RegScreen> {
                             onTap: (){
                               Navigator.pushReplacementNamed(context, '/signin');
                             },
-                            child: Text(
+                            child: const Text(
                               "Sign in",
                               style: TextStyle(
                                   fontWeight: FontWeight.bold,

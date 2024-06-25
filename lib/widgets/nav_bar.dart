@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:login_signup/screens/home_screen.dart';
 
 class NavBar extends StatefulWidget {
-   NavBar({super.key,});
+   const NavBar({super.key,});
 
 
   @override
@@ -22,7 +22,7 @@ class _NavBarState extends State<NavBar> {
           content: Text(message),
           actions: <Widget>[
             TextButton(
-              child: Text('OK'),
+              child: const Text('OK'),
               onPressed: () {
                 Navigator.of(context).pop();
               },
@@ -50,7 +50,7 @@ class _NavBarState extends State<NavBar> {
         padding: EdgeInsets.zero,
         children: [
           UserAccountsDrawerHeader(
-            accountName: Text('Logged in as'),
+            accountName: const Text('Logged in as'),
             accountEmail: Text(user.email??''),
             currentAccountPicture: CircleAvatar(
               backgroundColor: Colors.white,
@@ -58,25 +58,25 @@ class _NavBarState extends State<NavBar> {
                 child: Image.asset('assets/boy.png'),
               ),
             ),
-            decoration: BoxDecoration(
+            decoration: const BoxDecoration(
               image: DecorationImage(
                 image: AssetImage('assets/red_back.webp',),fit: BoxFit.cover,opacity: 0.9,
               )
             ),
           ),
           ListTile(
-            leading: Icon(Icons.favorite,color: Colors.redAccent,),
-            title: Text('Favourites',style: TextStyle(fontWeight: FontWeight.bold),),
+            leading: const Icon(Icons.favorite,color: Colors.redAccent,),
+            title: const Text('Favourites',style: TextStyle(fontWeight: FontWeight.bold),),
             onTap: ()=>Navigator.push(context,MaterialPageRoute(builder: (context)=>HomeScreen(index: 1,))),
           ),
           ListTile(
-            leading: Icon(Icons.shopping_cart,color: Colors.black,),
-            title: Text('Cart',style: TextStyle(fontWeight: FontWeight.bold),),
+            leading: const Icon(Icons.shopping_cart,color: Colors.black,),
+            title: const Text('Cart',style: TextStyle(fontWeight: FontWeight.bold),),
             onTap: ()=>Navigator.push(context,MaterialPageRoute(builder: (context)=>HomeScreen(index: 2))),
           ),
           ListTile(
-            leading: Icon(Icons.arrow_back,color: Colors.black,),
-            title: Text('Sign out',style: TextStyle(fontWeight: FontWeight.bold),),
+            leading: const Icon(Icons.arrow_back,color: Colors.black,),
+            title: const Text('Sign out',style: TextStyle(fontWeight: FontWeight.bold),),
             onTap:signOut,
           ),
         ],

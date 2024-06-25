@@ -17,9 +17,9 @@ class _FavouriteScreenState extends State<FavouriteScreen> {
     final finalList = provider.favourites;
     return Column(
       children: [
-        Padding(
-          padding: const EdgeInsets.only(top: 20, left: 20),
-          child: Row(
+        const Padding(
+          padding: EdgeInsets.only(top: 20, left: 20),
+          child:  Row(
             children: [
               Text(
                 'Favourites',
@@ -33,10 +33,10 @@ class _FavouriteScreenState extends State<FavouriteScreen> {
                 itemCount: finalList.length,
                 itemBuilder: (context, index) {
                   return Padding(
-                    padding: EdgeInsets.all(10),
+                    padding: const EdgeInsets.all(10),
                     child: Slidable(
                       endActionPane: ActionPane(
-                        motion: ScrollMotion(), children: [
+                        motion: const ScrollMotion(), children: [
                           SlidableAction(onPressed: (context){
                             finalList.removeAt(index);
                             setState(() {
@@ -57,7 +57,7 @@ class _FavouriteScreenState extends State<FavouriteScreen> {
                         },
                         title: Text(
                           finalList[index].name,
-                          style: TextStyle(
+                          style: const TextStyle(
                               fontSize: 17, fontWeight: FontWeight.bold),
                         ),
                         subtitle: Text(finalList[index].description,overflow: TextOverflow.ellipsis),
@@ -68,7 +68,7 @@ class _FavouriteScreenState extends State<FavouriteScreen> {
                           backgroundColor: Colors.grey.withOpacity(0.2),
                         ),
 
-                        trailing: Text("₹ ${finalList[index].price}",style: TextStyle(fontSize: 20,fontWeight: FontWeight.bold),),
+                        trailing: Text("₹ ${finalList[index].price}",style: const TextStyle(fontSize: 20,fontWeight: FontWeight.bold),),
 
                         tileColor: Colors.grey[100],
                       ),

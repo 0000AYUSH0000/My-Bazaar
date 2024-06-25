@@ -22,7 +22,7 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
         ),
         child: Column(children: [
            Padding(
-            padding: EdgeInsets.only(top: 200.0),
+            padding: const EdgeInsets.only(top: 200.0),
             child:  Image.asset('assets/cart.gif',scale: 4.5,),
           ),
           const SizedBox(
@@ -44,7 +44,7 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
               height: 53,
               width: 320,
               decoration: BoxDecoration(
-                gradient: LinearGradient(
+                gradient: const LinearGradient(
                   colors: [
                     Color(0xffB81736),
                     Color(0xff281537),
@@ -76,7 +76,7 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
               height: 53,
               width: 320,
               decoration: BoxDecoration(
-                gradient: LinearGradient(
+                gradient: const LinearGradient(
                   colors: [
                     Color(0xffB81736),
                     Color(0xff281537),

@@ -3,7 +3,7 @@ import 'package:login_signup/models/product.dart';
 import 'package:provider/provider.dart';
 
 class FavouriteProvider extends ChangeNotifier{
-   List <Product> _favourites=[];
+   final List <Product> _favourites=[];
    List<Product> get favourites => _favourites;
 
    void toggleFavourite(Product product){

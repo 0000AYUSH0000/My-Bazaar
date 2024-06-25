@@ -1,3 +1,4 @@
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:login_signup/screens/home_screen.dart';
@@ -20,19 +21,25 @@ class _AuthScreenState extends State<AuthScreen> {
           stream: FirebaseAuth.instance.authStateChanges(),
           builder: (context, snapshot) {
 
-            print(
+            if (kDebugMode) {
+              print(
                 "Auth state snapshot: ${snapshot.connectionState}, ${snapshot.hasData}");
+            }
 
             if (snapshot.connectionState == ConnectionState.waiting) {
-              return Center(child: CircularProgressIndicator());
+              return const Center(child: CircularProgressIndicator());
             }
 
             if (snapshot.hasData) {
-              print("User is logged in");
+              if (kDebugMode) {
+                print("User is logged in");
+              }
               return HomeScreen(index: 0,);
             } else {
-              print("User is not logged in");
-              return WelcomeScreen();
+              if (kDebugMode) {
+                print("User is not logged in");
+              }
+              return const WelcomeScreen();
             }
           }),
     );

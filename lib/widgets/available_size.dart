@@ -19,7 +19,7 @@ class _AvailableSizeState extends State<AvailableSize> {
         });
         },
       child: Container(
-        margin: EdgeInsets.only(right: 16),
+        margin: const EdgeInsets.only(right: 16),
         width: 50,
         height: 30,
         alignment: Alignment.center,
@@ -28,7 +28,7 @@ class _AvailableSizeState extends State<AvailableSize> {
           borderRadius: BorderRadius.circular(9),
           border: Border.all(color: Colors.red),
         ),
-        child: Text(widget.size,style: TextStyle(fontWeight: FontWeight.bold),),
+        child: Text(widget.size,style: const TextStyle(fontWeight: FontWeight.bold),),
       ),
     );
   }

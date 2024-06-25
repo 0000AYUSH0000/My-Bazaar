@@ -23,10 +23,10 @@ class _DetailsScreenState extends State<DetailsScreen> {
 
     return Scaffold(
       appBar: PreferredSize(
-        preferredSize: Size.fromHeight(60.0), // custom height
+        preferredSize: const Size.fromHeight(60.0), // custom height
         child: AppBar(
           flexibleSpace: Container(
-            decoration: BoxDecoration(
+            decoration: const BoxDecoration(
               gradient: LinearGradient(
                 colors: [
                   Color(0xffB81736),
@@ -35,9 +35,9 @@ class _DetailsScreenState extends State<DetailsScreen> {
               ),
             ),
           ),
-          title: Text(
+          title: const Text(
             'Details',
-            style: TextStyle(color: Colors.white),
+            style:  TextStyle(color: Colors.white),
           ),
           centerTitle: true,
           automaticallyImplyLeading: true,
@@ -47,7 +47,7 @@ class _DetailsScreenState extends State<DetailsScreen> {
         padding: const EdgeInsets.only(left: 20, right: 20),
         child: Column(
           children: [
-            SizedBox(
+            const SizedBox(
               height: 35,
             ),
             Row(
@@ -67,37 +67,37 @@ class _DetailsScreenState extends State<DetailsScreen> {
                 ),
               ],
             ),
-            SizedBox(
+            const SizedBox(
               height: 14,
             ),
             Container(
-              decoration: BoxDecoration(),
+              decoration: const BoxDecoration(),
               child: Column(
                 children: [
                   Text(
                     widget.product.name,
                     textAlign: TextAlign.center,
-                    style: TextStyle(fontSize: 17, fontWeight: FontWeight.bold),
+                    style: const TextStyle(fontSize: 17, fontWeight: FontWeight.bold),
                   ),
-                  SizedBox(
+                  const SizedBox(
                     height: 10,
                   ),
                   Text(
                     "₹ ${widget.product.price}",
-                    style: TextStyle(fontSize: 22, fontWeight: FontWeight.bold),
+                    style: const TextStyle(fontSize: 22, fontWeight: FontWeight.bold),
                   ),
-                  SizedBox(
+                  const SizedBox(
                     height: 20,
                   ),
                   Text(
                     widget.product.description,
                     textAlign: TextAlign.justify,
-                    style: TextStyle(fontSize: 16),
+                    style: const TextStyle(fontSize: 16),
                   ),
-                  SizedBox(
+                  const SizedBox(
                     height: 22,
                   ),
-                  Row(
+                  const Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
                       Text(
@@ -107,23 +107,23 @@ class _DetailsScreenState extends State<DetailsScreen> {
                       )
                     ],
                   ),
-                  SizedBox(
+                  const SizedBox(
                     height: 10,
                   ),
                   Row(
                     children: [
                       if (widget.product.id >= 1 &&
                           widget.product.id <= 25) ...[
-                        AvailableSize(
+                        const AvailableSize(
                           size: "US 6",
                         ),
-                        AvailableSize(
+                        const AvailableSize(
                           size: "US 7",
                         ),
-                        AvailableSize(
+                        const AvailableSize(
                           size: "US 8",
                         ),
-                        AvailableSize(
+                        const AvailableSize(
                           size: "US 9",
                         ),
 
@@ -131,69 +131,69 @@ class _DetailsScreenState extends State<DetailsScreen> {
                       if (widget.product.id >= 26 &&
                           widget.product.id <= 50) ...[
 
-                        AvailableSize(
+                        const AvailableSize(
                           size: "M",
                         ),
-                        AvailableSize(
+                        const AvailableSize(
                           size: "L",
                         ),
-                        AvailableSize(
+                        const AvailableSize(
                           size: "XL",
                         ),
-                        AvailableSize(
+                        const AvailableSize(
                           size: "XXL",
                         ),
                       ],
                       if (widget.product.id >= 51 &&
                           widget.product.id <= 75) ...[
-                        AvailableSize(
+                        const AvailableSize(
                           size: "128GB",
                         ),
-                        AvailableSize(
+                        const AvailableSize(
                           size: "256GB",
                         ),
-                        AvailableSize(
+                        const AvailableSize(
                           size: "512GB",
                         ),
-                        AvailableSize(
+                        const AvailableSize(
                           size: "1TB",
                         ),
 
                       ],
                       if (widget.product.id >= 76 &&
                           widget.product.id <= 100) ...[
-                        AvailableSize(
+                        const AvailableSize(
                           size: "128GB",
                         ),
-                        AvailableSize(
+                        const AvailableSize(
                           size: "256GB",
                         ),
-                        AvailableSize(
+                        const AvailableSize(
                           size: "512GB",
                         ),
                       ],
                       if (widget.product.id >= 101 &&
                           widget.product.id <= 125) ...[
 
-                        AvailableSize(
+                        const AvailableSize(
                           size: "M",
                         ),
-                        AvailableSize(
+                        const AvailableSize(
                           size: "L",
                         ),
-                        AvailableSize(
+                        const AvailableSize(
                           size: "XL",
                         ),
-                        AvailableSize(
+                        const AvailableSize(
                           size: "XXL",
                         ),
                       ],
                     ],
                   ),
-                  SizedBox(
+                  const SizedBox(
                     height: 15,
                   ),
-                  Align(
+                  const Align(
                     alignment: Alignment.centerLeft,
                     child: Text(
                       'Available Colours',
@@ -201,10 +201,10 @@ class _DetailsScreenState extends State<DetailsScreen> {
                           TextStyle(fontWeight: FontWeight.bold, fontSize: 18),
                     ),
                   ),
-                  SizedBox(
+                  const SizedBox(
                     height: 10,
                   ),
-                  Row(
+                  const Row(
                     children: [
                       CircleAvatar(
                         radius: 16,
@@ -229,15 +229,15 @@ class _DetailsScreenState extends State<DetailsScreen> {
                 ],
               ),
             ),
-            SizedBox(
+            const SizedBox(
               height: 35,
             ),
             Container(
-              padding: EdgeInsets.all(20),
+              padding: const EdgeInsets.all(20),
               width: double.infinity,
               height: MediaQuery.of(context).size.height / 10,
               decoration: BoxDecoration(
-                  gradient: LinearGradient(
+                  gradient: const LinearGradient(
                     colors: [
                       Color(0xffB81736),
                       Color(0xff281537),
@@ -249,7 +249,7 @@ class _DetailsScreenState extends State<DetailsScreen> {
                 children: [
                   Text(
                     "₹ ${widget.product.price}",
-                    style: TextStyle(
+                    style: const TextStyle(
                         fontSize: 26,
                         color: Colors.white,
                         fontWeight: FontWeight.bold),
@@ -264,8 +264,8 @@ class _DetailsScreenState extends State<DetailsScreen> {
                         ),
                       );
                     },
-                    label: Text("Add to Cart"),
-                    icon: Icon(Icons.add_shopping_cart),
+                    label: const Text("Add to Cart"),
+                    icon: const Icon(Icons.add_shopping_cart),
                   )
                 ],
               ),

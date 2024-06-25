@@ -43,12 +43,12 @@ class _MyAppState extends State<MyApp> {
           fontFamily: 'Poppins'
         ),
         debugShowCheckedModeBanner: false,
-        home: AuthScreen(),
+        home: const AuthScreen(),
         routes: {
           '/home': (context) => HomeScreen(index: 0,),
-          '/welcome': (context) => WelcomeScreen(),
-          '/signup' : (context) =>  RegScreen(),
-          '/signin' : (context) => LoginScreen()
+          '/welcome': (context) => const WelcomeScreen(),
+          '/signup' : (context) =>  const RegScreen(),
+          '/signin' : (context) => const LoginScreen()
         },
       ),
     );

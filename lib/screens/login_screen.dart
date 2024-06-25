@@ -1,7 +1,6 @@
-import 'package:flutter/cupertino.dart';
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:firebase_auth/firebase_auth.dart';
-import 'package:flutter/widgets.dart';
 import 'package:login_signup/screens/forgot_password.dart';
 import 'package:login_signup/screens/home_screen.dart';
 
@@ -26,7 +25,7 @@ class _LoginScreenState extends State<LoginScreen> {
           content: Text(message),
           actions: <Widget>[
             TextButton(
-              child: Text('OK'),
+              child: const Text('OK'),
               onPressed: () {
                 Navigator.of(context).pop();
               },
@@ -51,7 +50,9 @@ class _LoginScreenState extends State<LoginScreen> {
         email: emailController.text.trim(),
         password: passwordController.text.trim(),
       );
-      print("Signed in as ${userCredential.user?.email}");
+      if (kDebugMode) {
+        print("Signed in as ${userCredential.user?.email}");
+      }
 
       // Navigate to WelcomeScreen on successful login
       Navigator.pop(context);
@@ -66,7 +67,9 @@ class _LoginScreenState extends State<LoginScreen> {
       }
       else {
 
-        print('FirebaseAuthException: ${e.message}');
+        if (kDebugMode) {
+          print('FirebaseAuthException: ${e.message}');
+        }
         _showErrorDialog('Error', 'An error occurred. Please try again.');
       }
     }
@@ -117,7 +120,7 @@ class _LoginScreenState extends State<LoginScreen> {
                   children: [
                     TextField(
                       controller: emailController,
-                      decoration: InputDecoration(
+                      decoration: const InputDecoration(
                         suffixIcon: Icon(
                           Icons.check,
                           color: Colors.grey,
@@ -165,9 +168,9 @@ class _LoginScreenState extends State<LoginScreen> {
                       alignment: Alignment.centerRight,
                       child: GestureDetector(
                         onTap: (){
-                          Navigator.push(context, MaterialPageRoute(builder: (context)=>ForgotPassword()));
+                          Navigator.push(context, MaterialPageRoute(builder: (context)=>const ForgotPassword()));
                         },
-                        child: Text(
+                        child: const Text(
                           'Forgot Password?',
                           style: TextStyle(
                               fontWeight: FontWeight.bold,
@@ -212,7 +215,7 @@ class _LoginScreenState extends State<LoginScreen> {
                         mainAxisAlignment: MainAxisAlignment.end,
 
                         children: [
-                          Text(
+                          const Text(
                             "Don't have an account?",
                             style: TextStyle(fontSize: 14, color: Colors.grey),
                           ),
@@ -220,7 +223,7 @@ class _LoginScreenState extends State<LoginScreen> {
                             onTap: (){
                               Navigator.pushReplacementNamed(context, '/signup');
                             },
-                            child: Text(
+                            child: const Text(
                               'Sign Up',
                               style: TextStyle(
                                   fontWeight: FontWeight.bold, fontSize: 17),
