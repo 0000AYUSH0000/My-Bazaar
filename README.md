@@ -1,6 +1,6 @@
-# login_signup
+# My Bazaar
 
-A new Flutter project.
+An E-Commerce app with Firebase as backend.
 
 ## Getting Started
 
