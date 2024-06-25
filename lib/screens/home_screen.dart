@@ -5,7 +5,7 @@ import 'cart_details.dart';
 import 'package:login_signup/widgets/nav_bar.dart';
 class HomeScreen extends StatefulWidget {
    HomeScreen({super.key, required this.index,});
-   late final int index;
+   int index;
 
 
   @override

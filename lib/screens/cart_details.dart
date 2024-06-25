@@ -134,15 +134,16 @@ class _CartDetailsState extends State<CartDetails> {
                   Text(
                     "₹ ${provider.getTotalPrice()}",
                     style: const TextStyle(
-                        fontSize: 36,
+                        fontSize: 30,
                         color: Colors.white,
                         fontWeight: FontWeight.bold),
                   ),
                   ElevatedButton.icon(
+
                     onPressed: () {
                     },
                     label: const Text("Check-Out"),
-                    icon: const Icon(Icons.local_shipping_outlined),
+                    icon: const Icon(Icons.local_shipping_outlined,size: 15,),
                   )
                 ],
               ),
