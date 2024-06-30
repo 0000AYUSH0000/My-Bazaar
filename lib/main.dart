@@ -1,8 +1,6 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:login_signup/constants.dart';
-import 'package:login_signup/providers/cart_provider.dart';
-import 'package:login_signup/providers/favourite_provider.dart';
 import 'package:login_signup/providers/theme_provider.dart';
 import 'package:login_signup/providers/user_provider.dart';
 import 'package:login_signup/screens/auth_screen.dart';
@@ -24,8 +22,7 @@ Future<void> main() async {
 
   runApp(MultiProvider(
       providers: [
-        ChangeNotifierProvider(create: (_)=>FavouriteProvider()),
-        ChangeNotifierProvider(create: (_)=>CartProvider()),
+
         ChangeNotifierProvider(create: (_)=>UserProvider()),
         ChangeNotifierProvider(create: (_)=>ThemeProvider())
       ],
