@@ -95,11 +95,12 @@ class _ForgotPasswordState extends State<ForgotPassword> {
                   mainAxisAlignment: MainAxisAlignment.center,
 
                   children: [
-                    const Text(textAlign: TextAlign.center,'Enter your Email below and we will send you a link to reset your password.',style: TextStyle(fontSize: 20,fontWeight: FontWeight.w400),),
+                    const Text(textAlign: TextAlign.center,'Enter your Email below and we will send you a link to reset your password.',style: TextStyle(fontSize: 20,fontWeight: FontWeight.w400,color: Colors.black87,),),
                     const SizedBox(
                       height: 35,
                     ),
                     TextField(
+                      style: const TextStyle(color: Colors.black87),
                       controller: _emailController,
                       decoration: const InputDecoration(
                         suffixIcon: Icon(

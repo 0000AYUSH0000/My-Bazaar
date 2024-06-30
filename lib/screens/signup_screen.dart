@@ -1,3 +1,4 @@
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
@@ -53,16 +54,23 @@ class _RegScreenState extends State<RegScreen> {
           password: passwordController.text.trim(),
         );
 
+
         if (kDebugMode) {
           print("Signed in as ${userCredential.user?.email}");
         }
+
+        final userDoc = FirebaseFirestore.instance.collection('users').doc(FirebaseAuth.instance.currentUser?.email);
+        await userDoc.set({
+          'isDark':false
+        });
+        Navigator.pop(context);
+        Navigator.pushReplacement(context, MaterialPageRoute(builder: (context)=>HomeScreen(index: 0)));
       }
       else{
         _showErrorDialog('OOPs an error occurred', 'Make sure the password and confirm password are same');
       }
-      // Navigate to homescreen on successful signup
-      Navigator.pop(context);
-      Navigator.pushReplacement(context, MaterialPageRoute(builder: (context)=>HomeScreen(index: 0)));
+
+
     } on FirebaseAuthException catch (e) {
       Navigator.pop(context);
      _showErrorDialog('Error', e.code);
@@ -113,6 +121,7 @@ class _RegScreenState extends State<RegScreen> {
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
                      TextField(
+                       style: const TextStyle(color: Colors.black87),
                        controller: nameController ,
                       decoration: const InputDecoration(
                           suffixIcon: Icon(
@@ -131,6 +140,7 @@ class _RegScreenState extends State<RegScreen> {
                       height: 15,
                     ),
                      TextField(
+                       style: const TextStyle(color: Colors.black87),
                       controller: emailController,
                       decoration: const InputDecoration(
                         suffixIcon: Icon(
@@ -150,6 +160,7 @@ class _RegScreenState extends State<RegScreen> {
                       height: 15,
                     ),
                     TextField(
+                      style: const TextStyle(color: Colors.black87),
                       controller: passwordController,
                       obscureText: _obscureText,
                       decoration: InputDecoration(
@@ -179,6 +190,7 @@ class _RegScreenState extends State<RegScreen> {
                       height: 15,
                     ),
                     TextField(
+                      style: const TextStyle(color: Colors.black87),
                       controller: confirmPasswordController,
                       obscureText: _obscureText,
                       decoration: InputDecoration(
@@ -205,10 +217,7 @@ class _RegScreenState extends State<RegScreen> {
                       ),
                     ),
                     const SizedBox(
-                      height: 10,
-                    ),
-                    const SizedBox(
-                      height: 70,
+                      height: 75,
                     ),
                     GestureDetector(
                       onTap: signUp,
@@ -234,7 +243,7 @@ class _RegScreenState extends State<RegScreen> {
                       ),
                     ),
                     const SizedBox(
-                      height: 80,
+                      height: 40,
                     ),
                      Align(
                       alignment: Alignment.center,

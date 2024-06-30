@@ -119,6 +119,7 @@ class _LoginScreenState extends State<LoginScreen> {
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
                     TextField(
+                      style: const TextStyle(color: Colors.black87),
                       controller: emailController,
                       decoration: const InputDecoration(
                         suffixIcon: Icon(
@@ -137,6 +138,7 @@ class _LoginScreenState extends State<LoginScreen> {
                       height: 35,
                     ),
                     TextField(
+                      style: const TextStyle(color: Colors.black87),
                       controller: passwordController,
                       obscureText: _obscureText,
                       decoration: InputDecoration(
@@ -226,7 +228,7 @@ class _LoginScreenState extends State<LoginScreen> {
                             child: const Text(
                               'Sign Up',
                               style: TextStyle(
-                                  fontWeight: FontWeight.bold, fontSize: 17),
+                                  fontWeight: FontWeight.bold, fontSize: 17,color: Colors.black87),
                             ),
                           ),
                         ],

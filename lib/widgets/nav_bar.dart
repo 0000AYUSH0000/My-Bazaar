@@ -70,12 +70,12 @@ class _NavBarState extends State<NavBar> {
             onTap: ()=>Navigator.push(context,MaterialPageRoute(builder: (context)=>HomeScreen(index: 1,))),
           ),
           ListTile(
-            leading: const Icon(Icons.shopping_cart,color: Colors.black,),
+            leading: const Icon(Icons.shopping_cart,),
             title: const Text('Cart',style: TextStyle(fontWeight: FontWeight.bold),),
             onTap: ()=>Navigator.push(context,MaterialPageRoute(builder: (context)=>HomeScreen(index: 2))),
           ),
           ListTile(
-            leading: const Icon(Icons.arrow_back,color: Colors.black,),
+            leading: const Icon(Icons.arrow_back,),
             title: const Text('Sign out',style: TextStyle(fontWeight: FontWeight.bold),),
             onTap:signOut,
           ),
